@@ -34,6 +34,7 @@ function CF(){
         <input type="text" name="website-link" placeholder="u230838.gluweb.nl/website-hier" value="<?= $temp_website_link ?>">
         <p class="text">Github Link</p>
         <input type="text" name="github-link" placeholder="github.com/repo-hier" value="<?= $temp_github_link ?>">
+        <!-- add custom input for an image -->
     <?php
 }
 
@@ -58,6 +59,8 @@ function save_custom_fields($post_id){
                 'project_title' => $project_title,
                 'website_link' => $website_link,
                 'github_link' => $github_link
+                // add img to wp_postmeta
+                // add path to said location to get it
             ]
         );
     }

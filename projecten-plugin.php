@@ -37,6 +37,7 @@ function database_creation(){
         project_title          varchar(255),
         website_link           varchar(255),
         github_link            varchar(255),
+        #add img path to wp_postmeta location of file
         PRIMARY KEY            (project_ID)
     ) $charset;";
 
