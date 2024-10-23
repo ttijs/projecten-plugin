@@ -120,7 +120,19 @@ function save_custom_fields($post_id) {
             }
         }
     } else {
-        // Update existing records if no new image was uploaded
+        if ($temp_website_link == '' && $temp_github_link == '') {
+            $wpdb->insert(
+                $db,
+                [
+                    'project_ID' => $project_id,
+                    'project_title' => $project_title,
+                    'website_link' => $website_link,
+                    'github_link' => $github_link,
+                    'image_link' => $image_link // Save image link
+                ]
+            );
+        } else {
+        
         $wpdb->update(
             $db,
             [
