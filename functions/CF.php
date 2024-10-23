@@ -48,10 +48,14 @@ function save_custom_fields($post_id){
     global $wpdb;
     $db = $wpdb->prefix.'portofolio_project_info';
 
-    $temp_website_link = $wpdb->get_var("SELECT `website_link` FROM $db WHERE `project_ID` = $project_id");
-    $temp_github_link = $wpdb->get_var("SELECT `github_link` FROM $db WHERE `project_ID` = $project_id");
 
-    if ($temp_website_link == null || $temp_github_link == null){
+    // $temp_website_link = $wpdb->get_var("SELECT `website_link` FROM $db WHERE `project_ID` = $project_id");
+    // $temp_github_link = $wpdb->get_var("SELECT `github_link` FROM $db WHERE `project_ID` = $project_id");
+
+    if ($website_link == null || $github_link == null){
+        echo 'asdf';
+        exit;
+
         $wpdb->insert(
             $wpdb->prefix.'portofolio_project_info',
             [
